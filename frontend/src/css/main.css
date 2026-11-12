@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #F8FAFC;
+    color: #0F172A;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-700 focus:ring-primary shadow-sm;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-dark border border-slate-200 hover:bg-slate-50 focus:ring-slate-300 shadow-sm;
+  }
+  .btn-success {
+    @apply btn bg-success text-white hover:bg-green-700 focus:ring-success shadow-sm;
+  }
+  .btn-danger {
+    @apply btn bg-danger text-white hover:bg-red-700 focus:ring-danger shadow-sm;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-muted hover:bg-slate-100 hover:text-dark focus:ring-slate-300;
+  }
+  .input-field {
+    @apply w-full rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-dark placeholder-slate-400 transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+  }
+  .form-label {
+    @apply block text-sm font-medium text-dark mb-1.5;
+  }
+  .card {
+    @apply bg-surface rounded-xl border border-slate-200/80 shadow-card;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold tracking-wide;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toast-enter {
+  animation: slideInRight 0.2s ease-out forwards;
+}
+
